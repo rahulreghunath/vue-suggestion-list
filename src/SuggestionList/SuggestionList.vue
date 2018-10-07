@@ -1,6 +1,7 @@
 <template>
     <div>
-        <input list="suggestionList" id="answerInput" v-model="suggestionInput" @change="suggestionChanged($event)"/>
+        <input class="form-control" list="suggestionList" id="answerInput" v-model="suggestionInput"
+               @change="suggestionChanged($event)"/>
         <datalist id="suggestionList">
             <option v-for="item in items" :key="item.value" :data-value="item.value">{{ item.option }}</option>
         </datalist>
