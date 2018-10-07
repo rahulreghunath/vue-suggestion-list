@@ -1,7 +1,8 @@
 {
   "name": "vue-suggestion-list",
-  "version": "0.1.0",
-  "private": true,
+  "version": "1.0.0",
+  "description": "Suggestion list vue js component  using HTML5 datalist ",
+  "main": "src/SuggestionList/SuggestionList.vue",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
@@ -40,5 +41,18 @@
     "> 1%",
     "last 2 versions",
     "not ie <= 8"
-  ]
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rahulreghunath/vue-suggestion-list.git"
+  },
+  "keywords": [
+    "suggestion-list"
+  ],
+  "author": "Rahul Reghunath",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rahulreghunath/vue-suggestion-list/issues"
+  },
+  "homepage": "https://github.com/rahulreghunath/vue-suggestion-list#readme"
 }
