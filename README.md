@@ -35,7 +35,7 @@ const vue = new Vue({
 
 ```
 
-###Create list
+### Create list
 
 ```vue
 <suggestion-list :items="items" v-model="item"></suggestion-list>
