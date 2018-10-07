@@ -63,7 +63,7 @@ suggestion datalist is given with a default class of ```vue-suggestion-list```. 
 
 ---
 
-###Example
+### Example
 ```vue
 <template>
   <list :items="items" v-model="value"></list>
