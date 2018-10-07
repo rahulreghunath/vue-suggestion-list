@@ -1,9 +1,10 @@
 <template>
     <div>
-        <input class="form-control" list="suggestionList" id="answerInput" v-model="suggestionInput"
+        <input class="form-control vue-suggestion-input" list="suggestionList" id="answerInput"
+               v-model="suggestionInput"
                @change="suggestionChanged($event)"/>
-        <datalist id="suggestionList">
-            <option v-for="item in items" :key="item.value" :data-value="item.value">{{ item.option }}</option>
+        <datalist class="vue-suggestion-list" id="suggestionList">
+            <option v-for="item in items" :key="item.value" :data-value="item.value">{{ item.text }}</option>
         </datalist>
     </div>
 </template>

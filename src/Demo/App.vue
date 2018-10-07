@@ -1,6 +1,10 @@
 <template>
     <div id="app">
-        <list :items="items" v-model="value"></list>
+        <div class="col-md-3">
+            <div class="form-group">
+                <list :items="items" v-model="value"></list>
+            </div>
+        </div>
     </div>
 </template>
 
@@ -16,9 +20,9 @@
             return {
                 value: '2',
                 items: [
-                    {option: 'First', value: 1},
-                    {option: 'Two', value: 2},
-                    {option: 'Three', value: 3}
+                    {text: 'First', value: 1},
+                    {text: 'Two', value: 2},
+                    {text: 'Three', value: 3}
                 ]
             }
         }
