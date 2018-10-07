@@ -1,10 +1,10 @@
 <template>
     <div>
-        <input class="form-control vue-suggestion-input" list="suggestionList" id="answerInput"
+        <input class="form-control vue-suggestion-input" :list="'list'+_uid" ref="answerInput"
                v-model="suggestionInput"
                @change="suggestionChanged($event)"/>
-        <datalist class="vue-suggestion-list" id="suggestionList">
-            <option v-for="item in items" :key="item.value" :data-value="item.value">{{ item.text }}</option>
+        <datalist class="vue-suggestion-list" :id="'list'+_uid">
+            <option v-for="list in lists" :key="list.value" :data-value="list.value">{{ list.text }}</option>
         </datalist>
     </div>
 </template>
@@ -17,12 +17,20 @@
             event: 'change'
         },
         props: {
-            value: String,
-            items: Array
+            value: {
+                type: String,
+            },
+            items: {
+                type: Array,
+                default() {
+                    return [{value: undefined, text: 'Nothing in the list'}];
+                }
+            }
         },
         data() {
             return {
                 selected: this.value,
+                lists: this.items,
                 suggestionInput: ''
             }
         },
@@ -56,7 +64,7 @@
                 for (let i = 0; i < options.length; i++) {
                     let option = options[i];
                     if (option.getAttribute('data-value') === this.selected) {
-                        document.getElementById('answerInput').value = option.value;
+                        this.$refs.answerInput.value = option.value;
                         break;
                     }
                 }
@@ -67,7 +75,8 @@
                 this.initialValue();
             }
             document.querySelector('input[list]').addEventListener('input', (e) => {
-                let options = document.querySelectorAll('#suggestionList option'),
+                let list = e.target.getAttribute('list');
+                let options = document.querySelectorAll('#' + list + ' option'),
                     inputValue = e.target.value;
 
                 for (let i = 0; i < options.length; i++) {
