@@ -1,6 +1,6 @@
 {
   "name": "vue-suggestion-list",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Suggestion list vue js component  using HTML5 datalist ",
   "main": "src/SuggestionList/SuggestionList.vue",
   "scripts": {

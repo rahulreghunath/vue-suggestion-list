@@ -69,7 +69,7 @@ Example:
 </template>
 <script>
 export default {
-  name: 'ExampleModal',
+  name: 'ExampleList',
   data () {
         return {
             value: '2',
